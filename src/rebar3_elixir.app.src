@@ -1,8 +1,7 @@
-{application, rebar3_elixir,
+{application, rebar3_elixir_plugin,
  [{description, "An OTP application"},
   {vsn, "1.1.0"},
   {registered, []},
-  {mod, {rebar3_elixir_app, []}},
   {applications,
    [kernel,
     stdlib
@@ -12,5 +11,5 @@
 
   {maintainers, []},
   {licenses, ["Apache 2.0"]},
-  {links, []}
+  {links, [{"Github", "https://github.com/Supersonido/rebar_elixir_plugin"}]}
  ]}.
