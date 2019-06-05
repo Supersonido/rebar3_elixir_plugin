@@ -1,4 +1,4 @@
-# rebar3\_elixir
+# rebar3\_elixir\_plugin
 
 A rebar3 plugin to **include Elixir dependencies** in your Erlang
 application. This plugin **can handle transitive
@@ -49,7 +49,7 @@ Edit your `rebar.config` and follow these instructions:
 
 ```erlang
 {plugins, [
-    {rebar3_elixir, ".*", {git, "https://github.com/Supersonido/rebar3_elixir.git", {branch, "master"}}}
+    {rebar_elixir_plugin, ".*", {git, "https://github.com/Supersonido/rebar_plugin_plugin.git", {branch, "master"}}}
 ]}.
 ```
 
@@ -82,7 +82,7 @@ Mix gives an error and the plugin cannot progress and is retrying getting the de
 {erl_opts, [debug_info]}.
 
 {plugins, [
-    {rebar3_elixir, ".*", {git, "https://github.com/Supersonido/rebar3_elixir.git", {branch, "master"}}}
+    {rebar_elixir_plugin, ".*", {git, "https://github.com/Supersonido/rebar_elixir_plugin.git", {branch, "master"}}}
 ]}.
 
 {deps,  [
@@ -116,9 +116,9 @@ Mix gives an error and the plugin cannot progress and is retrying getting the de
 
 ```bash
 angel@T440p: /example $ rm -rf rebar.lock _build && ./rebar3 compile
-===> Fetching rebar3_elixir ({git,"https://github.com/Supersonido/rebar3_elixir.git",
+===> Fetching rebar_elixir_plugin ({git,"https://github.com/Supersonido/rebar_elixir_plugin.git",
                                   {branch,"master"}})
-===> Compiling rebar3_elixir
+===> Compiling rebar_elixir_plugin
 ===> Verifying dependencies...
 ===> Fetching jason ({hex,"jason","1.1.2"})
 ===> Fetching poolboy ({pkg,<<"poolboy">>,<<"1.5.2">>})
