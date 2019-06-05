@@ -1,4 +1,4 @@
--module(rebar3_elixir_dep).
+-module(rebar3_elixir_plugin_dep).
 
 -behaviour(rebar_resource_v2).
 

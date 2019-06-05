@@ -1,4 +1,4 @@
--module(rebar3_elixir).
+-module(rebar3_elixir_plugin).
 
 -export([init/1]).
 

@@ -1,4 +1,4 @@
--module(rebar3_elixir_utils).
+-module(rebar3_elixir_plugin_utils).
 
 -export([to_binary/1, 
          to_string/1,

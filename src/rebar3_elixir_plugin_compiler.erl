@@ -1,4 +1,4 @@
--module(rebar3_elixir_compiler).
+-module(rebar3_elixir_plugin_compiler).
 
 -export([build/1,
          format_error/1]).
