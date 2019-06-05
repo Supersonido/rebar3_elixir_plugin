@@ -20,7 +20,7 @@ init(Type, _State) ->
 %% Lock
 lock(AppInfo, _) ->
   {hex, Name, Vsn} = rebar_app_info:source(AppInfo),
-  {hex, rebar3_elixir_utils:to_binary(Name), rebar3_elixir_utils:to_binary(Vsn)}.
+  {hex, rebar3_elixir_plugin_utils:to_binary(Name), rebar3_elixir_plugin_utils:to_binary(Vsn)}.
 
 
 %% Download download
@@ -54,8 +54,8 @@ cdn(State) ->
 
 
 fetch({hex, Name_, Vsn_}, CDN, Dir) ->
-  Name = rebar3_elixir_utils:to_binary(Name_), 
-  Vsn  = rebar3_elixir_utils:to_binary(Vsn_),
+  Name = rebar3_elixir_plugin_utils:to_binary(Name_), 
+  Vsn  = rebar3_elixir_plugin_utils:to_binary(Vsn_),
   case filelib:is_dir(Dir) of
     true ->
       Package = binary_to_list(<<Name/binary, "-", Vsn/binary, ".tar">>),
