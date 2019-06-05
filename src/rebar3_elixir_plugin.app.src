@@ -1,6 +1,6 @@
 {application, rebar3_elixir_plugin,
  [{description, "An OTP application"},
-  {vsn, "1.1.0"},
+  {vsn, "2.0.0"},
   {registered, []},
   {applications,
    [kernel,
