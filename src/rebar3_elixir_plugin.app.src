@@ -11,5 +11,5 @@
 
   {maintainers, []},
   {licenses, ["Apache 2.0"]},
-  {links, [{"Github", "https://github.com/Supersonido/rebar_elixir_plugin"}]}
+  {links, [{"Github", "https://github.com/Supersonido/rebar3_elixir_plugin"}]}
  ]}.
