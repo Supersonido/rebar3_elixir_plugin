@@ -1,4 +1,4 @@
--module(rebar3_elixir_compiler).
+-module(rebar3_elixir_plugin_compiler).
 
 -export([build/1,
          format_error/1]).
@@ -10,22 +10,22 @@ build(AppInfo) ->
   AppDir = rebar_app_info:dir(AppInfo),
   BuildDir = filename:join(AppDir, "../"),
   BuildElixirDir = filename:join(AppDir, "_build/prod/lib/"),
-  AppName = rebar3_elixir_utils:to_string(rebar_app_info:name(AppInfo)),
+  AppName = rebar3_elixir_plugin_utils:to_string(rebar_app_info:name(AppInfo)),
 
-  ok = rebar3_elixir_utils:compile(AppDir),
+  ok = rebar3_elixir_plugin_utils:compile(AppDir),
 
   {ok, Apps} = rebar_utils:list_dir(BuildElixirDir),
   Deps = Apps -- [AppName],
-  rebar3_elixir_utils:move_to_path(Deps, BuildElixirDir, BuildDir),
+  rebar3_elixir_plugin_utils:move_to_path(Deps, BuildElixirDir, BuildDir),
   
   AppBuild = filename:join(AppDir, "_build/prod/lib/" ++ AppName ++ "/ebin"),
   AppTaget = filename:join(AppDir, "ebin"),
   ec_file:copy(AppBuild, AppTaget, [recursive]),
   
-  Lock = rebar3_elixir_utils:create_rebar_lock_from_mix(AppDir, Deps),
-  ElixirLock = rebar3_elixir_utils:elixir_to_lock(Lock),
-  rebar3_elixir_utils:save_rebar_lock(AppDir, ElixirLock),
-  rebar3_elixir_utils:delete(filename:join(AppDir, "_build")),
+  Lock = rebar3_elixir_plugin_utils:create_rebar_lock_from_mix(AppDir, Deps),
+  ElixirLock = rebar3_elixir_plugin_utils:elixir_to_lock(Lock),
+  rebar3_elixir_plugin_utils:save_rebar_lock(AppDir, ElixirLock),
+  rebar3_elixir_plugin_utils:delete(filename:join(AppDir, "_build")),
   
   ok.
 

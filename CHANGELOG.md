@@ -13,6 +13,10 @@
 ## Next release
 
 
+## v2.0.0
+
+- [C] Rename application from rebar3_elixir to rebar3_elixir_plugin
+
 ## v1.1.0
 
 - [+] Add support to erlang releases
